@@ -24,25 +24,24 @@ ulList.removeAttribute("data-dog-tail"); //удаление аттрибута
 
 // снизу функция генерирующая списки и вложенные списки
 
-const initialArray = [1,2,3, [1.1, 1.2, ["1.1.1", "1.1.2", ["1.2.1", "1.2.2", "1.2.3"], "1.1.3"], 1.3], 4]
+const initialArray = [1, 2, 3, [1.1, 1.2, ["1.1.1", "1.1.2", ["1.2.1", "1.2.2", "1.2.3"], "1.1.3"], 1.3], 4];
 
 generateList = (array) => {
-    const ul = document.createElement("ul")
-    let elem;
+  const ul = document.createElement("ul");
+  let elem;
 
-    for (let i = 0; i < array.length; i++) {
-        if (Array.isArray(array[i])) {
-            elem = generateList(array[i])
-        } else {
-            elem = document.createElement("li")
-            elem.textContent = array[i]
-        }
-
-        ul.append(elem)
-        
+  for (let i = 0; i < array.length; i++) {
+    if (Array.isArray(array[i])) {
+      elem = generateList(array[i]);
+    } else {
+      elem = document.createElement("li");
+      elem.textContent = array[i];
     }
 
-    return ul
-}
+    ul.append(elem);
+  }
 
-document.body.append(generateList(initialArray))
+  return ul;
+};
+
+document.body.append(generateList(initialArray));
