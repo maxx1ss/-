@@ -24,34 +24,25 @@ ulList.removeAttribute("data-dog-tail"); //удаление аттрибута
 
 // снизу функция генерирующая списки и вложенные списки
 
-const initArray = [1, 2, 3, 4, [1.1, 1.2, 1.3], 5];
+const initialArray = [1,2,3, [1.1, 1.2, ["1.1.1", "1.1.2", ["1.2.1", "1.2.2", "1.2.3"], "1.1.3"], 1.3], 4]
 
 generateList = (array) => {
-  if (!array || array.length === 0) {
-    return;
-  }
+    const ul = document.createElement("ul")
+    let elem;
 
-  const initUlList = document.createElement("ul");
-  document.body.prepend(initUlList);
+    for (let i = 0; i < array.length; i++) {
+        if (Array.isArray(array[i])) {
+            elem = generateList(array[i])
+        } else {
+            elem = document.createElement("li")
+            elem.textContent = array[i]
+        }
 
-  for (let i = 0; i < array.length; i++) {
-    let outerLiElem = document.createElement("li");
-    outerLiElem.textContent = array[i];
-
-    if (Array.isArray(array[i])) {
-      outerLiElem.textContent = "";
-      const nestedUl = document.createElement("ul");
-      outerLiElem.append(nestedUl);
-
-      for (let j = 0; j < array[i].length; j++) {
-        let insideLiElem = document.createElement("li");
-        insideLiElem.textContent = array[i][j]; //берем числа из вложенного массива в массив (1.1, 1.2 и тд)
-        nestedUl.append(insideLiElem);
-      }
+        ul.append(elem)
+        
     }
 
-    initUlList.append(outerLiElem);
-  }
-};
+    return ul
+}
 
-generateList(initArray);
+document.body.append(generateList(initialArray))
