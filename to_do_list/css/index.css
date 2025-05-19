@@ -1,3 +1,7 @@
+body {
+  box-sizing: border-box;
+}
+
 @font-face {
   font-family: "Roboto";
   font-weight: 400;
@@ -14,16 +18,112 @@
   max-width: 1200px;
   min-height: 800px;
   margin-inline: auto;
-  margin-top: 100px;
+  margin-top: 64px;
   background-color: #684e32;
   border: 2px solid #5d3a00;
   border-radius: 30px;
+  padding: 64px 128px;
 }
 .main-wrapper .content-title {
+  margin-bottom: 24px;
   text-align: center;
   font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: 40px;
   color: #feefe5;
-  margin-top: 24px;
+}
+
+.form-flex-wrapper {
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-size: 22px;
+  margin-bottom: 24px;
+  gap: 50px;
+}
+.form-block-control {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.form-buttons-control {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.form-buttons-control button {
+  font-size: 24px;
+  font-family: "Roboto", sans-serif;
+  color: #feefe5;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+}
+.form-buttons-control button#reset {
+  background-color: rgb(243, 48, 48);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.form-buttons-control button#submit {
+  background-color: rgba(7, 223, 64, 0.962);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+label {
+  font-size: 24px;
+  font-family: "Roboto", sans-serif;
+  color: #feefe5;
+}
+
+input {
+  max-width: 300px;
+  padding: 12px;
+  font-size: 24px;
+  border-radius: 10px;
+  border: none;
+}
+
+#todo-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 300px;
+  padding: 24px;
+  background-color: white;
+  border-radius: 15px;
+}
+#todo-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 32px;
+}
+#todo-description {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+}
+#todo-id {
+  font-family: "Roboto", sans-serif;
+  font-size: 22px;
+  position: absolute;
+  left: 400px;
+}
+#todo-buttons-control {
+  display: flex;
+}
+#todo-buttons-control button {
+  font-size: 24px;
+  font-family: "Roboto", sans-serif;
+  color: #feefe5;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+}
+#todo-buttons-control button#reset {
+  background-color: rgb(243, 48, 48);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+#todo-buttons-control button#submit {
+  background-color: rgba(7, 223, 64, 0.962);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }/*# sourceMappingURL=index.css.map */
