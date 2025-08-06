@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+.title {
+  font-family: "Roboto";
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.photos-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+.photo-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 24px;
+  font-family: "Roboto";
+  padding: 16px;
+}
