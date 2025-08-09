@@ -2,21 +2,48 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+}
+
+.header {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: 0.4s;
+  background-color: #fff;
+  border-bottom: 1px solid black;
+  padding: 16px;
+}
+
 .title {
   text-align: center;
   font-family: "Roboto";
+  margin: 0;
 }
 
 .album-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(2, calc(50% - 16px));
   gap: 32px;
-  padding: 32px;
+  padding: 80px 48px;
+}
+
+@media screen and (max-width: 480px) {
+  .album-cards {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
 }
 
 .album-card:hover {
   transform: scale(1.05);
-  transition: 0.6s;
   box-shadow: 4px 3px 15px 0px;
 }
 
@@ -24,10 +51,11 @@
   display: grid;
   place-items: center;
   border: 2px solid rgb(32, 31, 31);
-  border-radius: 15px;
+  border-radius: 16px;
   padding: 24px;
   background-color: #fff;
   cursor: pointer;
   font-size: 20px;
   font-weight: 500;
+  transition: 0.4s;
 }

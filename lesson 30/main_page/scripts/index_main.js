@@ -35,3 +35,17 @@ document.querySelector(".album-cards").addEventListener("click", (e) => {
       });
   }
 });
+
+let lastScrollTop = 0;
+const header = document.querySelector(".header");
+
+window.addEventListener("scroll", () => {
+  let st = window.pageYOffset || document.documentElement.scrollTop;
+  if (st > lastScrollTop) {
+    header.style.transform = " translateY(-71px)";
+  } else {
+    header.style.transform = "none";
+  }
+
+  lastScrollTop = st <= 0 ? 0 : st;
+});
